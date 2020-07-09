@@ -16,9 +16,9 @@ onloadCallback();
 $('form').on('submit', function(e) {
   if(grecaptcha.getResponse() == "") {
     e.preventDefault();
-    alert("You can't proceed!");
+    alert("Go back and click and complete reCaptcha box please!");
   } else {
-    alert("Thank you");
+    alert("Thank you, your email was submitted.");
   }
 });
 	
