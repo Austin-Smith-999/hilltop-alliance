@@ -4,10 +4,25 @@ heading: Get in touch today
 ---
 
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-<!-- <style>
-	.reCaptchaClass {margin-top: 1em;}
-</style> -->
+<script>
+var onloadCallback = function() {
+	grecaptcha.render('html_element', {
+    'sitekey' : '6LdBx6cZAAAAAMe_wkkY7LW70c-WV7otxd7FtLKK'
+  });
+};
+onloadCallback();
+$('form').on('submit', function(e) {
+  if(grecaptcha.getResponse() == "") {
+    e.preventDefault();
+    alert("You can't proceed!");
+  } else {
+    alert("Thank you");
+  }
+});
+	
+</script>
 
 
 <div class="contact-box">
